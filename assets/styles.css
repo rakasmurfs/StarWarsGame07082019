@@ -1,0 +1,18 @@
+
+#darthMaul, #jedi, #yoda, #trooper{
+    display: inline-block;
+    width: 20%;
+    height: 20%;
+    padding: 1%;
+    margin: 0 1% 0 1%;
+    text-align: center;
+    background-color: black;
+}
+body{
+    background-image: url("images/backgroundImage.jpg");
+    color: white;
+}
+.darthMaul, .jedi, .yoda, .trooper{
+    height: 90%;
+    width: 90%;
+}
