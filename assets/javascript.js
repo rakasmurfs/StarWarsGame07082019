@@ -40,7 +40,7 @@ var players =
         {
             name: "Trooper",
             idName: "trooper",
-            health: 320,
+            health: 220,
             attackPower:0,
             baseAttackPower: 0,
             counterAttackPower: 10,
@@ -63,76 +63,62 @@ var playerTwoTrooper;
 var wins = 0;
 var losses = 0;
 var gameover=true;
-//Create characters
-// Each character needs 'counterAttackPower', 'health', 'attackPower', 'baseAttackPower' 
-//When a character is clicked move them to the "your character" div
-//Move all remaining characters to 'enemies available to attack' div and their padding turns red
-//When a enemy character is clicked moved them to 'defender' div and their padding turns black
 
-//When attack is pressed 'your character's 'attackPower' is deducted from 'defender' 'health' var, 'attackPower' of 'your character' is then increased by 'baseAttackPower', 'your character' 'health' var is then deducted by 'defender' 'counterAttackPower' var.
-//If attack button is pressed with no one in the 'defender' div, return "you have no enemy to attack".
-
-// If 'yourCharacter' health is less than 0, display "you have been defeated" below defender
-// below "you have been defeated" add restart game button.
-//If there are no characters in 'enemies' and 'defender' div, display "you have won", add new game button below that.
-
-//when enemy 'health' is 0, remove them from the game and display 'pick a new enemy'
-// 'attackPower' increases are consistent between fights
 $( document ).ready(function() 
     {
         function newGame()
             {
                  players = 
-[
-    darthMinion = 
-        {
-            name: "Darth Maul",
-            idName: "darthMaul",
-            health: 150,
-            attackPower: 2,
-            baseAttackPower: 2,
-            counterAttackPower: 20,
-            isPlayerOne: false,
-            isPlayerTwo: false,
-            image: "<img src='assets/images/darthMaulMinion.jpg' class='darthMaul'>",
-        },
-    jediMinion = 
-        {
-            name: "Jedi",
-            idName: "jedi",
-            health: 120,
-            attackPower: 8,
-            baseAttackPower: 8,
-            counterAttackPower: 5,
-            isPlayerOne: false,
-            isPlayerTwo: false,
-            image: "<img src='assets/images/jediMinion.jpg' class='jedi'>",
-        },
-    yodaMinion =
-        {
-            name: "Yoda",
-            idName: "yoda",
-            health: 180,
-            attackPower: 1,
-            baseAttackPower: 1,
-            counterAttackPower: 25,
-            isPlayerOne: false,
-            isPlayerTwo: false,
-            image: "<img src='assets/images/yodaMinion.jpeg' class='yoda'>",
-        },
-    trooperMinion = 
-        {
-            name: "Trooper",
-            idName: "trooper",
-            health: 320,
-            attackPower:0,
-            baseAttackPower: 0,
-            counterAttackPower: 10,
-            isPlayerOne: false,
-            isPlayerTwo: false,
-            image: "<img src='assets/images/trooperMinion.jpg' class='trooper'>",
-        },
-]
+                    [
+                        darthMinion = 
+                            {
+                                name: "Darth Maul",
+                                idName: "darthMaul",
+                                health: 150,
+                                attackPower: 2,
+                                baseAttackPower: 2,
+                                counterAttackPower: 20,
+                                isPlayerOne: false,
+                                isPlayerTwo: false,
+                                image: "<img src='assets/images/darthMaulMinion.jpg' class='darthMaul'>",
+                            },
+                        jediMinion = 
+                            {
+                                name: "Jedi",
+                                idName: "jedi",
+                                health: 120,
+                                attackPower: 8,
+                                baseAttackPower: 8,
+                                counterAttackPower: 5,
+                                isPlayerOne: false,
+                                isPlayerTwo: false,
+                                image: "<img src='assets/images/jediMinion.jpg' class='jedi'>",
+                            },
+                        yodaMinion =
+                            {
+                                name: "Yoda",
+                                idName: "yoda",
+                                health: 180,
+                                attackPower: 1,
+                                baseAttackPower: 1,
+                                counterAttackPower: 25,
+                                isPlayerOne: false,
+                                isPlayerTwo: false,
+                                image: "<img src='assets/images/yodaMinion.jpeg' class='yoda'>",
+                            },
+                        trooperMinion = 
+                            {
+                                name: "Trooper",
+                                idName: "trooper",
+                                health: 320,
+                                attackPower:0,
+                                baseAttackPower: 0,
+                                counterAttackPower: 10,
+                                isPlayerOne: false,
+                                isPlayerTwo: false,
+                                image: "<img src='assets/images/trooperMinion.jpg' class='trooper'>",
+                            },
+                    ]
 playerOneSelected = false;
 playerTwoSelected = false;
 enemiesRemaining = players.length - 1;
@@ -151,18 +137,19 @@ $("#playerOne").html("");
 $("#enemies").html("");
 $("#playerTwo").html("");
 $("#result").html("");
+$("characters").html("");
 
 for(i=0; i< players.length; i++)
 {
     var objectPos = players[i];
-    $("#characters").append('<div id =' +objectPos.idName +'></div>');
+    $("#characters").append('<div id =' + objectPos.idName +'></div>');
   //  $("#players").attr('id', objectPos.idName);
     $("#"+objectPos.idName).attr('class', objectPos.idName);
     $("#"+objectPos.idName).append(objectPos.image);
     $("#"+objectPos.idName).append("<span> <br>" + objectPos.name + "</span>" + "<br>"); //+ "<span class="+objectPos.idName + "Health>" + "HP: " + objectPos.health + "</span>");
 }
             }
-
+            //below generates each div/image of my objects
         for(i=0; i< players.length; i++)
             {
                 var objectPos = players[i];
@@ -299,11 +286,10 @@ for(i=0; i< players.length; i++)
             }); 
 //END DEFENDER SELECTION
         
-        // Code above
 
         function attack()
             {
-                    if(playerOneSelected === true && playerTwoSelected === true){
+                    if(playerOneSelected === true && playerTwoSelected === true && gameover===true){
 
                         if(playerOneHealth > 0)
                             {
@@ -328,12 +314,12 @@ for(i=0; i< players.length; i++)
                                 $(".playerTwoHP").text(playerTwoHealth);              
                                 if(playerOneAttack > 0)
                                     {
-                                $("#result").text("You attacked for " + playerOneAttack + " damage." + "You took " + playerTwoCounter + " damage.");
-                                playerOneAttack+=playerOneBaseAttack;
+                                        $("#result").text("You attacked for " + playerOneAttack + " damage." + "You took " + playerTwoCounter + " damage.");
+                                        playerOneAttack+=playerOneBaseAttack;
                                     }
                                 else
                                     {
-                                        $("#result").text("Only imperial troopers can be so accurate."); 
+                                        $("#result").text("You missed! Only imperial troopers can be so accurate."); 
                                     }            
 
                             }
@@ -350,7 +336,6 @@ for(i=0; i< players.length; i++)
                         if(playerTwoHealth <= 0)
                             {
                                 $("#playerTwo").html("");
-                                //playerTwoSelected = false;
                                 $("#result").text("You defeated " + playerTwoName +". Please select a new target");
                                 enemiesRemaining--;
                                 if(enemiesRemaining === 0 && playerTwoSelected === true && gameover === true)
