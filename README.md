@@ -31,14 +31,14 @@ The purpose of this assignment was to solidify my knowledge on the usage of jQue
     
     Output: Character will append to `your character`
 
-    ![Results](/assets/screenshots/select.png)
+    ![Results](/assets/screenshots/select.png){:height="700px" width="400px"}
 
     **Select Enemy**
     
         Click on your enemy choice
     
     Output: Enemy picked will append to `defender`
-    ![Results](/assets/screenshots/defender.png)
+    ![Results](/assets/screenshots/defender.png){:height="700px" width="400px"}
 
     **Attack**
     
@@ -46,7 +46,7 @@ The purpose of this assignment was to solidify my knowledge on the usage of jQue
     
     Output: Enemy will lose health based on your attack power, you will lose health based off defender's attack power. See screen-shot below:
 
-    ![Results](/assets/screenshots/attack.png)
+    ![Results](/assets/screenshots/attack.png){:height="700px" width="400px"}
         
     **Defeat**
     
@@ -54,7 +54,7 @@ The purpose of this assignment was to solidify my knowledge on the usage of jQue
     
     Output: The website will display a button to restart the game and add your loss to the defeat counter. See screen-shot below:
 
-    ![Results](/assets/assets/screenshots/defeat.png)
+    ![Results](/assets/assets/screenshots/defeat.png){:height="700px" width="400px"}
 
     **Victory**
     
@@ -62,7 +62,7 @@ The purpose of this assignment was to solidify my knowledge on the usage of jQue
     
     Output: The website will display a button to restart the game and add your victory to the wins counter. See screen-shot below:
 
-    ![Results](/assets/assets/screenshots/victory.png)
+    ![Results](/assets/assets/screenshots/victory.png){:height="700px" width="400px"}
 
 
 
